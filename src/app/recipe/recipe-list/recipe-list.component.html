@@ -1,1 +1,5 @@
-<p>recipe-list works!</p>
+<div *ngFor="let recipe of recipes">
+  <button mat-button (click)="selectRecipe(recipe)">
+    {{recipe.name}}
+  </button>
+</div>

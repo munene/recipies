@@ -1,1 +1,32 @@
-<p>recipe-detail works!</p>
+<div *ngIf="recipe; else elseBlock">
+  <div>Name: {{recipe.name}}</div>
+  <div>Description: {{recipe.description}}</div>
+  <div>Name: {{recipe.name}}</div>
+
+  <!--Recipe ingredients-->
+  <div>
+    <div>Ingredients</div>
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient}}
+      </li>
+    </ul>
+  </div>
+
+  <!--Recipe steps-->
+  <div>
+    <div>Steps</div>
+    <ul>
+      <li *ngFor="let step of recipe.steps">
+        {{step}}
+      </li>
+    </ul>
+  </div>
+
+  <div>Name: {{recipe.name}}</div>
+</div>
+
+<ng-template #elseBlock>
+  Please select a recipe
+</ng-template>
+
