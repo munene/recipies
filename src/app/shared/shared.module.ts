@@ -8,6 +8,9 @@ import { NavHeaderComponent } from './nav-header/nav-header.component';
   declarations: [NavHeaderComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    NavHeaderComponent
   ]
 })
 export class SharedModule { }
