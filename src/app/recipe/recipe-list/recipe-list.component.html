@@ -1,3 +1,7 @@
+<button class="add-recipe" mat-raised-button color="accent" (click)="addRecipe()" cdkFocusInitial>
+  Add new recipe
+</button>
+
 <div *ngFor="let recipe of recipes">
   <button mat-button (click)="selectRecipe(recipe)">
     {{recipe.name}}
