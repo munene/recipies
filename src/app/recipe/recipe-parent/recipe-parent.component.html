@@ -1,5 +1,5 @@
 <app-nav-header></app-nav-header>
-<div class="container">
+<div class="parent">
   <app-recipe-list [recipes]="recipes" (recipeSelected)="onRecipeSelected($event)"></app-recipe-list>
   <app-recipe-detail [recipe]="selectedRecipe"></app-recipe-detail>
 </div>

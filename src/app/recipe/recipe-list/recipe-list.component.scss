@@ -1,0 +1,11 @@
+@import '../../../assets/styles/variables.scss';
+
+button {
+  width: 100%;
+  font-size: $recipe-list-item-text-size;
+  padding: $recipe-list-item-padding;
+}
+
+button:hover {
+  background: lightgray;
+}

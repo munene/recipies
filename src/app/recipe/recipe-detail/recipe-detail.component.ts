@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Recipe } from 'src/app/models/recipe.models';
+import { Recipe } from 'src/app/models/recipe.model';
+import { Media } from 'src/app/models/media.model';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -8,6 +10,8 @@ import { Recipe } from 'src/app/models/recipe.models';
 })
 export class RecipeDetailComponent implements OnInit {
   // The recipe to be rendered on the details view
+  private _recipe: Recipe;
+
   @Input()
   get recipe(): Recipe { return this._recipe; }
 
@@ -15,11 +19,17 @@ export class RecipeDetailComponent implements OnInit {
   set recipe(value: Recipe) {
     this._recipe = value;
   }
-  private _recipe: Recipe;
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
   }
 
+  getMediaUrl(media: Media): SafeUrl {
+    if (!media || !media.url) {
+      return '';
+    }
+
+    return this.sanitizer.bypassSecurityTrustResourceUrl(media.url);
+  }
 }

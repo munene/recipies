@@ -1,0 +1,24 @@
+@import '../../../assets/styles/variables.scss';
+
+h1 {
+  font-size: $recipe-detail-header-text-size;
+  padding: $recipe-detail-header-padding;
+  width: 100%;
+  text-align: center;
+}
+
+iframe {
+  height: $recipe-media-height !important;
+  width: $recipe-media-width !important;
+}
+
+img {
+  height: $recipe-media-height !important;
+  width: $recipe-media-width !important;
+}
+
+ngb-carousel {
+  height: $recipe-media-height !important;
+  width: $recipe-media-width !important;
+  margin: 0 auto;
+}
